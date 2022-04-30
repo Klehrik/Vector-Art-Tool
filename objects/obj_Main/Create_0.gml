@@ -4,8 +4,6 @@ depth = -1000;
 draw_set_font(font);
 draw_set_colour(c_white);
 
-ToolSelected = 0;
-
 FilePath = "none";
 
 
@@ -145,5 +143,9 @@ function save_to_file()
 		file_text_writeln(file);
 		
 		file_text_close(file);
+		
+		FilePath = path;
 	}
 }
+
+

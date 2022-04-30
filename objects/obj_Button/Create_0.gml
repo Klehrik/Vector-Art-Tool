@@ -2,7 +2,7 @@
 
 image_speed = 0;
 
-Pressed = false; // Flag if button is pressed
+Pressed = 0; // Frames to show "pressed" sprite
 
 Image = noone;
 ImageBlend = c_white;

@@ -17,7 +17,6 @@
     {"id":{"name":"spr_Triangle","path":"sprites/spr_Triangle/spr_Triangle.yy",},"order":2,},
     {"id":{"name":"obj_Shape","path":"objects/obj_Shape/obj_Shape.yy",},"order":4,},
     {"id":{"name":"spr_LoadFile","path":"sprites/spr_LoadFile/spr_LoadFile.yy",},"order":1,},
-    {"id":{"name":"Hierarchy","path":"notes/Hierarchy/Hierarchy.yy",},"order":0,},
     {"id":{"name":"spr_Button","path":"sprites/spr_Button/spr_Button.yy",},"order":2,},
     {"id":{"name":"rm_Program","path":"rooms/rm_Program/rm_Program.yy",},"order":0,},
   ],

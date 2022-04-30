@@ -1,5 +1,11 @@
 /// Grid : Init
 
+Tool = noone;
+ToolColour = c_white;
+ToolWidth = 1; // in tiles of 32
+ToolHeight = 1; // in tiles of 32
+ToolRotate = 0;
+
 Grid = noone;
 GridWidth = -1;
 GridHeight = -1;
