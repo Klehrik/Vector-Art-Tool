@@ -29,7 +29,9 @@ if (point_in_rectangle(mouse_x, mouse_y, 288, 80, 992, 720))
 			var size = 32;
 			var mx = mouse_x - 288;
 			var my = mouse_y - 80;
-			draw_sprite_ext(Tool, ToolRotate, (mx div 32) * 32 + 288, (my div 32) * 32 + 80, size / sprite_get_width(Tool) * ToolWidth, size / sprite_get_width(Tool) * ToolHeight, 0, ToolColour, 1);
+			var tx = mx div 32;
+			var ty = my div 32;
+			draw_sprite_ext(Tool, ToolRotate, tx * 32 + 288, ty * 32 + 80, size / sprite_get_width(Tool) * min(ToolWidth, 22 - tx), size / sprite_get_width(Tool) * min(ToolHeight, 20 - ty), 0, ToolColour, 1);
 		}
 	}
 }

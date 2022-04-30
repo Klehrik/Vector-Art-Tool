@@ -59,8 +59,8 @@ if (mouse_check_button(mb_left))
 				shape.sprite_index = Tool;
 				shape.image_index = ToolRotate;
 				shape.image_blend = ToolColour;
-				shape.Width = ToolWidth;
-				shape.Height = ToolHeight;
+				shape.Width = min(ToolWidth, 22 - tx);
+				shape.Height = min(ToolHeight, 20 - ty);
 				shape.image_xscale = 0; // This will set itself on the next frame
 				shape.image_yscale = 0;
 			
@@ -70,5 +70,3 @@ if (mouse_check_button(mb_left))
 	}
 }
 if (mouse_check_button_released(mb_left)) MousePrevGridLocation = [-1, -1];
-
-show_debug_message(instance_count);
