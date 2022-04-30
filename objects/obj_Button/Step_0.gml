@@ -21,10 +21,17 @@ if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, i
 		case spr_SaveFile:
 			obj_Main.save_to_file();
 			break;
+			
+			
+		
+		// Tool select
+		case spr_Eraser:
+			obj_Grid.Tool = spr_Eraser;
+			break;
 				
 			
 			
-		// Tool select
+		// Shape select
 		case spr_Square:
 			obj_Grid.Tool = spr_Square;
 			obj_Grid.ToolRotate = 0;
