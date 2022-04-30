@@ -12,6 +12,7 @@
     {"id":{"name":"spr_SaveFile","path":"sprites/spr_SaveFile/spr_SaveFile.yy",},"order":2,},
     {"id":{"name":"spr_TallTriangle","path":"sprites/spr_TallTriangle/spr_TallTriangle.yy",},"order":4,},
     {"id":{"name":"spr_CircleQuarter","path":"sprites/spr_CircleQuarter/spr_CircleQuarter.yy",},"order":7,},
+    {"id":{"name":"spr_ExportFile","path":"sprites/spr_ExportFile/spr_ExportFile.yy",},"order":3,},
     {"id":{"name":"spr_Square","path":"sprites/spr_Square/spr_Square.yy",},"order":0,},
     {"id":{"name":"obj_Grid","path":"objects/obj_Grid/obj_Grid.yy",},"order":2,},
     {"id":{"name":"spr_Triangle","path":"sprites/spr_Triangle/spr_Triangle.yy",},"order":2,},
