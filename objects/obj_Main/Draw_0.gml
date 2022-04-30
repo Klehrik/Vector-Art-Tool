@@ -1,12 +1,13 @@
 /// Main : Draw
 
 // File name
-var _x = 288;
-var _y = 30;
-var shadow_offset = 2;
-var text = "File Path:  " + FilePath;
-draw_text_colour(_x + shadow_offset, _y + shadow_offset, text, c_black, c_black, c_black, c_black, 1);
-draw_text(_x, _y, text);
+draw_text_shadow(288, 30, "File Path:  " + FilePath, 2);
+
+// Controls (below tool buttons)
+draw_text_shadow(1032, 284, "Rotate Left         (Q)", 2);
+draw_text_shadow(1032, 316, "Rotate Right       (W)", 2);
+draw_text_shadow(1032, 348, "Scale Horizon.   (1)(3)", 2);
+draw_text_shadow(1032, 380, "Scale Vert.        (2)(4)", 2);
 
 
 

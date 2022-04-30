@@ -1,10 +1,33 @@
 /// Grid : Step
 
-// Rotate selected tool (if it's a shape)
+// Select tool (hotkeys)
+if (keyboard_check_pressed(ord("E"))) { Tool = spr_Eraser; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("R"))) { Tool = spr_Picker; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("A"))) { Tool = spr_Square; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("S"))) { Tool = spr_HalfSquare; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("D"))) { Tool = spr_HalfTriangle; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("F"))) { Tool = spr_Triangle; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("Z"))) { Tool = spr_Circle; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("X"))) { Tool = spr_Semicircle; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("C"))) { Tool = spr_CircleQuarter; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("V"))) { Tool = spr_CircleInvertedQuarter; reset_shape_modifiers(); }
+
+
+// Rotate shape tool
 if (keyboard_check_pressed(ord("Q"))) ToolRotate -= 1;
-else if (keyboard_check_pressed(ord("E"))) ToolRotate += 1;
+else if (keyboard_check_pressed(ord("W"))) ToolRotate += 1;
 if (ToolRotate < 0) ToolRotate = 3;
 else if (ToolRotate > 3) ToolRotate = 0;
+
+
+// Scale shape tool
+if (keyboard_check_pressed(ord("1"))) ToolWidth += 1;
+else if (keyboard_check_pressed(ord("3"))) ToolWidth -= 1;
+if (keyboard_check_pressed(ord("2"))) ToolHeight += 1;
+else if (keyboard_check_pressed(ord("4"))) ToolHeight -= 1;
+ToolWidth = clamp(ToolWidth, 1, 20);
+ToolHeight = clamp(ToolHeight, 1, 20);
+
 
 // Use tool
 if (mouse_check_button(mb_left))
@@ -13,6 +36,11 @@ if (mouse_check_button(mb_left))
 	if (Tool != noone and point_in_rectangle(mouse_x, mouse_y, 288, 80, 992, 720))
 	{
 		if (Tool == spr_Eraser)
+		{
+			var shape = instance_position(mouse_x, mouse_y, obj_Shape);
+			if (shape != noone) instance_destroy(shape);
+		}
+		else if (Tool == spr_Picker)
 		{
 			
 		}

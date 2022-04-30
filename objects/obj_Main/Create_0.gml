@@ -57,8 +57,15 @@ function create_tool_buttons()
 	var button = instance_create_depth(_x, _y, 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_Eraser;
-	button.Tooltip = "Eraser";
-	button.TooltipWidth = 110;
+	button.Tooltip = "Eraser (E)";
+	button.TooltipWidth = 140;
+	button.TooltipHeight = 48;
+	
+	var button = instance_create_depth(_x + distance, _y, 0, obj_Button);
+	button.set_size(size);
+	button.Image = spr_Picker;
+	button.Tooltip = "Picker (R)";
+	button.TooltipWidth = 140;
 	button.TooltipHeight = 48;
 	
 	
@@ -67,32 +74,32 @@ function create_tool_buttons()
 	button.set_size(size);
 	button.Image = spr_Square;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Square";
-	button.TooltipWidth = 110;
+	button.Tooltip = "Square (A)";
+	button.TooltipWidth = 150;
 	button.TooltipHeight = 48;
 	
 	var button = instance_create_depth(_x + distance, _y + distance, 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_HalfSquare;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Half Square";
-	button.TooltipWidth = 160;
+	button.Tooltip = "Half Square (S)";
+	button.TooltipWidth = 195;
 	button.TooltipHeight = 48;
 	
 	var button = instance_create_depth(_x + (distance * 2), _y + distance, 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_HalfTriangle;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Triangle";
-	button.TooltipWidth = 130;
+	button.Tooltip = "Triangle (D)";
+	button.TooltipWidth = 160;
 	button.TooltipHeight = 48;
 	
 	var button = instance_create_depth(_x + (distance * 3), _y + distance, 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_Triangle;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Slope";
-	button.TooltipWidth = 100;
+	button.Tooltip = "Slope (F)";
+	button.TooltipWidth = 130;
 	button.TooltipHeight = 48;
 	
 	
@@ -101,32 +108,32 @@ function create_tool_buttons()
 	button.set_size(size);
 	button.Image = spr_Circle;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Circle";
-	button.TooltipWidth = 100;
+	button.Tooltip = "Circle (Z)";
+	button.TooltipWidth = 140;
 	button.TooltipHeight = 48;
 	
 	var button = instance_create_depth(_x + distance, _y + (distance * 2), 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_Semicircle;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Semicircle";
-	button.TooltipWidth = 150;
+	button.Tooltip = "Semicircle (X)";
+	button.TooltipWidth = 180;
 	button.TooltipHeight = 48;
 	
 	var button = instance_create_depth(_x + (distance * 2), _y + (distance * 2), 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_CircleQuarter;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Quarter Circle";
-	button.TooltipWidth = 190;
+	button.Tooltip = "Quarter Circle (C)";
+	button.TooltipWidth = 230;
 	button.TooltipHeight = 48;
 	
 	var button = instance_create_depth(_x + (distance * 3), _y + (distance * 2), 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_CircleInvertedQuarter;
 	button.ImageBlend = c_black;
-	button.Tooltip = "Round Slope";
-	button.TooltipWidth = 170;
+	button.Tooltip = "Round Slope (V)";
+	button.TooltipWidth = 210;
 	button.TooltipHeight = 48;
 }
 

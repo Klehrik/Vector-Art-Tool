@@ -23,4 +23,11 @@ function create_new_grid(width, height)
 	GridHeight = height;
 }
 
+function reset_shape_modifiers()
+{
+	ToolWidth = 1; // in tiles of 32
+	ToolHeight = 1; // in tiles of 32
+	ToolRotate = 0;
+}
+
 create_new_grid(22, 20);

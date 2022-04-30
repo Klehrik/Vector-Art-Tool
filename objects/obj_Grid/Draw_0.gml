@@ -19,10 +19,10 @@ if (point_in_rectangle(mouse_x, mouse_y, 288, 80, 992, 720))
 {
 	if (Tool != noone)
 	{
-		if (Tool == spr_Eraser)
+		if (Tool == spr_Eraser or Tool == spr_Picker)
 		{
 			var size = 64;
-			draw_sprite_ext(Tool, 0, mouse_x - 16, mouse_y - 48, size / sprite_get_width(Tool), size / sprite_get_width(Tool), 0, c_white, 1);
+			draw_sprite_ext(Tool, 0, mouse_x - 16, mouse_y - 56, size / sprite_get_width(Tool), size / sprite_get_width(Tool), 0, c_white, 1);
 		}
 		else
 		{

@@ -4,6 +4,7 @@
 if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, id))
 {
 	Pressed = 6;
+	with (obj_Grid) reset_shape_modifiers();
 	
 	// Run button effect
 	switch (Image)
@@ -15,7 +16,7 @@ if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, i
 			break;
 				
 		case spr_LoadFile:
-				
+			
 			break;
 				
 		case spr_SaveFile:
@@ -28,48 +29,44 @@ if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, i
 		case spr_Eraser:
 			obj_Grid.Tool = spr_Eraser;
 			break;
+			
+		case spr_Picker:
+			obj_Grid.Tool = spr_Picker;
+			break;
 				
 			
 			
 		// Shape select
 		case spr_Square:
 			obj_Grid.Tool = spr_Square;
-			obj_Grid.ToolRotate = 0;
 			break;
 				
 		case spr_HalfSquare:
 			obj_Grid.Tool = spr_HalfSquare;
-			obj_Grid.ToolRotate = 0;
 			break;
 				
 		case spr_HalfTriangle:
 			obj_Grid.Tool = spr_HalfTriangle;
-			obj_Grid.ToolRotate = 0;
 			break;
 				
 		case spr_Triangle:
 			obj_Grid.Tool = spr_Triangle;
-			obj_Grid.ToolRotate = 0;
 			break;
 				
 		case spr_Circle:
 			obj_Grid.Tool = spr_Circle;
-			obj_Grid.ToolRotate = 0;
 			break;
 				
 		case spr_Semicircle:
 			obj_Grid.Tool = spr_Semicircle;
-			obj_Grid.ToolRotate = 0;
 			break;
 				
 		case spr_CircleQuarter:
 			obj_Grid.Tool = spr_CircleQuarter;
-			obj_Grid.ToolRotate = 0;
 			break;
 				
 		case spr_CircleInvertedQuarter:
 			obj_Grid.Tool = spr_CircleInvertedQuarter;
-			obj_Grid.ToolRotate = 0;
 			break;
 	}
 }
