@@ -1,0 +1,6 @@
+Hierarchy
+
+obj_Manager
+	> obj_Grid
+		> obj_Shape
+	> obj_Button
