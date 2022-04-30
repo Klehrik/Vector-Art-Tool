@@ -6,12 +6,12 @@ else if (mouse_check_button_released(mb_left))
 {
 	if (Pressed == true and position_meeting(mouse_x, mouse_y, id))
 	{
-		
 		// Run button effect
-		switch (sprite_index)
+		switch (Image)
 		{
 			case spr_NewFile:
-				obj_Grid.create_new_grid();
+				obj_Main.FileName = "none";
+				obj_Grid.create_new_grid(22, 20);
 				break;
 				
 				
@@ -21,10 +21,9 @@ else if (mouse_check_button_released(mb_left))
 				
 				
 			case spr_SaveFile:
-				
+				obj_Main.save_to_file();
 				break;
 		}
-		
 	}
 	Pressed = false;
 }

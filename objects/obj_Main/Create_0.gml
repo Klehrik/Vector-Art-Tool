@@ -2,12 +2,15 @@
 
 depth = -1000;
 draw_set_font(font);
+draw_set_colour(c_white);
 
 ToolSelected = 0;
 
+FilePath = "none";
 
 
-// Functions (these ones are just to help manage readability)
+
+// Init Functions (these ones are just to help manage readability)
 function create_file_buttons()
 {
 	var _x = 20;
@@ -43,9 +46,10 @@ function create_file_buttons()
 	button.TooltipWidth = 190;
 	button.TooltipHeight = 48;
 }
+
 function create_tool_buttons()
 {
-	var _x = 1048;
+	var _x = 1032;
 	var _y = 108;
 	var size = 48;
 	var distance = 56;
@@ -125,3 +129,21 @@ function create_tool_buttons()
 
 create_file_buttons();
 create_tool_buttons();
+
+
+// Functions
+function save_to_file()
+{
+	if (FilePath == "none") var path = get_save_filename("|*.txt", "untitled");
+	else var path = FilePath;
+	
+	if (path != "")
+	{
+		var file = file_text_open_write(path);
+		
+		file_text_write_string(file, "vat_file");
+		file_text_writeln(file);
+		
+		file_text_close(file);
+	}
+}

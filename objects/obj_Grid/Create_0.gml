@@ -14,3 +14,5 @@ function create_new_grid(width, height)
 	GridWidth = width;
 	GridHeight = height;
 }
+
+create_new_grid(22, 20);
