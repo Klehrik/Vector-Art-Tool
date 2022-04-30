@@ -1,5 +1,15 @@
 {
   "resources": [
+    {"id":{"name":"spr_HalfSquare","path":"sprites/spr_HalfSquare/spr_HalfSquare.yy",},"order":1,},
+    {"id":{"name":"spr_Circle","path":"sprites/spr_Circle/spr_Circle.yy",},"order":5,},
+    {"id":{"name":"spr_CircleInvertedQuarter","path":"sprites/spr_CircleInvertedQuarter/spr_CircleInvertedQuarter.yy",},"order":8,},
+    {"id":{"name":"spr_HalfTriangle","path":"sprites/spr_HalfTriangle/spr_HalfTriangle.yy",},"order":3,},
+    {"id":{"name":"spr_Semicircle","path":"sprites/spr_Semicircle/spr_Semicircle.yy",},"order":6,},
+    {"id":{"name":"spr_TallTriangle","path":"sprites/spr_TallTriangle/spr_TallTriangle.yy",},"order":4,},
+    {"id":{"name":"spr_CircleQuarter","path":"sprites/spr_CircleQuarter/spr_CircleQuarter.yy",},"order":7,},
+    {"id":{"name":"spr_Square","path":"sprites/spr_Square/spr_Square.yy",},"order":0,},
+    {"id":{"name":"spr_Triangle","path":"sprites/spr_Triangle/spr_Triangle.yy",},"order":2,},
+    {"id":{"name":"obj_Shape","path":"objects/obj_Shape/obj_Shape.yy",},"order":0,},
     {"id":{"name":"rm_Program","path":"rooms/rm_Program/rm_Program.yy",},"order":0,},
   ],
   "Options": [
@@ -34,6 +44,7 @@
     {"folderPath":"folders/Animation Curves.yy","order":12,"resourceVersion":"1.0","name":"Animation Curves","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Notes.yy","order":13,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Shapes.yy","order":9,"resourceVersion":"1.0","name":"Shapes","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
