@@ -4,9 +4,11 @@
 draw_text_shadow(288, 30, "File Path:  " + FilePath, 2);
 
 // Controls (below tool buttons)
-draw_text_shadow(1032, 284, "Rotate Shape      (Q)", 2);
-draw_text_shadow(1032, 316, "Scale Horizon.   (1)(3)", 2);
-draw_text_shadow(1032, 348, "Scale Vert.        (2)(4)", 2);
+var _x = 1030;
+var _y = 348;
+draw_text_shadow(_x, _y, "Rotate Shape      (Q)", 2);
+draw_text_shadow(_x, _y + 32, "Scale Horizon.   (1)(3)", 2);
+draw_text_shadow(_x, _y + 64, "Scale Vert.        (2)(4)", 2);
 
 
 

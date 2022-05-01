@@ -8,7 +8,7 @@ FilePath = "none";
 
 
 
-// Init Functions (these ones are just to help manage readability)
+// Init Functions
 function create_file_buttons()
 {
 	var _x = 20;
@@ -47,8 +47,8 @@ function create_file_buttons()
 
 function create_tool_buttons()
 {
-	var _x = 1032;
-	var _y = 108;
+	var _x = 1030;
+	var _y = 172;
 	var size = 48;
 	var distance = 56;
 	
@@ -137,8 +137,35 @@ function create_tool_buttons()
 	button.TooltipHeight = 48;
 }
 
+function create_hsv_sliders()
+{
+	var _x = 20;
+	var _y = 172;
+	var hsize = 248;
+	var vsize = 40;
+	var distance = 60;
+	
+	var slider = instance_create_depth(_x, _y, 0, obj_Slider);
+	slider.image_index = 0;
+	slider.image_xscale = hsize / sprite_get_width(spr_HSV);
+	slider.image_yscale = vsize / sprite_get_height(spr_HSV);
+	
+	var slider = instance_create_depth(_x, _y + distance, 0, obj_Slider);
+	slider.image_index = 1;
+	slider.image_xscale = hsize / sprite_get_width(spr_HSV);
+	slider.image_yscale = vsize / sprite_get_height(spr_HSV);
+	slider.Pointer = 1;
+	
+	var slider = instance_create_depth(_x, _y + (distance * 2), 0, obj_Slider);
+	slider.image_index = 2;
+	slider.image_xscale = hsize / sprite_get_width(spr_HSV);
+	slider.image_yscale = vsize / sprite_get_height(spr_HSV);
+	slider.Pointer = 1;
+}
+
 create_file_buttons();
 create_tool_buttons();
+create_hsv_sliders();
 
 
 // Functions

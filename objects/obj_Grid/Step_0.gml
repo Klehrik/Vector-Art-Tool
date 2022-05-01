@@ -1,5 +1,9 @@
 /// Grid : Step
 
+// Make tool colour
+ToolColour = make_color_hsv(ToolColourHSV[0], ToolColourHSV[1], ToolColourHSV[2]);
+
+
 // Select tool (hotkeys)
 if (keyboard_check_pressed(ord("E"))) { Tool = spr_Eraser; reset_shape_modifiers(); }
 else if (keyboard_check_pressed(ord("W"))) { Tool = spr_Picker; reset_shape_modifiers(); }
