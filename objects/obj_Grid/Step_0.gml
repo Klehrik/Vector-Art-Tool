@@ -50,7 +50,17 @@ if (mouse_check_button(mb_left))
 		}
 		else if (Tool == spr_Picker)
 		{
-			
+			var shape = instance_position(mouse_x, mouse_y, obj_Shape);
+			if (shape != noone)
+			{
+				// Modify the sliders directly
+				with (obj_Slider)
+				{
+					if (image_index == 0) Pointer = color_get_hue(shape.image_blend) / 255;
+					else if (image_index == 1) Pointer = color_get_saturation(shape.image_blend) / 255;
+					else if (image_index == 2) Pointer = color_get_value(shape.image_blend) / 255;
+				}
+			}
 		}
 		
 		// Place shape
