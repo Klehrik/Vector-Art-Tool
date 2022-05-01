@@ -215,7 +215,7 @@ function save_to_file()
 
 function load_from_file()
 {
-	var path = get_open_filename("|*.txt", "");
+	var path = get_save_filename("|*.txt", "");
 	
 	if (path != "")
 	{
