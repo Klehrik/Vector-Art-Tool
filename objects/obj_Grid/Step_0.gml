@@ -2,7 +2,7 @@
 
 // Select tool (hotkeys)
 if (keyboard_check_pressed(ord("E"))) { Tool = spr_Eraser; reset_shape_modifiers(); }
-else if (keyboard_check_pressed(ord("R"))) { Tool = spr_Picker; reset_shape_modifiers(); }
+else if (keyboard_check_pressed(ord("W"))) { Tool = spr_Picker; reset_shape_modifiers(); }
 else if (keyboard_check_pressed(ord("A"))) { Tool = spr_Square; reset_shape_modifiers(); }
 else if (keyboard_check_pressed(ord("S"))) { Tool = spr_HalfSquare; reset_shape_modifiers(); }
 else if (keyboard_check_pressed(ord("D"))) { Tool = spr_HalfTriangle; reset_shape_modifiers(); }
@@ -14,10 +14,14 @@ else if (keyboard_check_pressed(ord("V"))) { Tool = spr_CircleInvertedQuarter; r
 
 
 // Rotate shape tool
-if (keyboard_check_pressed(ord("Q"))) ToolRotate -= 1;
-else if (keyboard_check_pressed(ord("W"))) ToolRotate += 1;
-if (ToolRotate < 0) ToolRotate = 3;
-else if (ToolRotate > 3) ToolRotate = 0;
+if (keyboard_check_pressed(ord("Q")))
+{
+	ToolRotate += 1;
+	var w = ToolWidth; // Flip Width and Height for proper rotation
+	ToolWidth = ToolHeight;
+	ToolHeight = w;
+}
+if (ToolRotate > 3) ToolRotate = 0;
 
 
 // Scale shape tool
@@ -54,7 +58,6 @@ if (mouse_check_button(mb_left))
 			var ty = my div 32;
 			if !(MousePrevGridLocation[0] == tx and MousePrevGridLocation[1] == ty)
 			{
-				var size = 32;
 				var shape = instance_create_depth(tx * 32 + 288, ty * 32 + 80, 0, obj_Shape);
 				shape.sprite_index = Tool;
 				shape.image_index = ToolRotate;

@@ -64,8 +64,8 @@ function create_tool_buttons()
 	var button = instance_create_depth(_x + distance, _y, 0, obj_Button);
 	button.set_size(size);
 	button.Image = spr_Picker;
-	button.Tooltip = "Picker (R)";
-	button.TooltipWidth = 140;
+	button.Tooltip = "Picker (W)";
+	button.TooltipWidth = 145;
 	button.TooltipHeight = 48;
 	
 	
@@ -151,12 +151,71 @@ function save_to_file()
 	{
 		var file = file_text_open_write(path);
 		
+		// Save metadata
 		file_text_write_string(file, "vat_file");
 		file_text_writeln(file);
+		file_text_write_real(file, instance_number(obj_Shape));
+		file_text_writeln(file);
+		
+		// Save shape data
+		with (obj_Shape)
+		{
+			var data = "";
+			data += string(x) + " " + string(y) + " ";
+			data += string(sprite_index) + " " + string(image_index) + " " + string(image_blend) + " ";
+			data += string(Width) + " " + string(Height);
+			file_text_write_string(file, data);
+			file_text_writeln(file);
+		}
 		
 		file_text_close(file);
 		
 		FilePath = path;
+	}
+}
+
+function load_from_file()
+{
+	var path = get_open_filename("|*.txt", "");
+	
+	if (path != "")
+	{
+		var file = file_text_open_read(path);
+		
+		var check = file_text_read_string(file);
+		if (check == "vat_file")
+		{
+			instance_destroy(obj_Shape);
+			
+			// Read metadata
+			file_text_readln(file);
+			var count = file_text_read_real(file);
+			file_text_readln(file);
+			
+			for (var i = 0; i < count; i++)
+			{
+				// Read shape data
+				var data = file_text_read_string(file);
+				file_text_readln(file);
+				
+				// Split line into array
+				data = string_split(data, " ");
+				
+				// Create shape
+				var shape = instance_create_depth(real(data[0]), real(data[1]), 0, obj_Shape);
+				shape.sprite_index = real(data[2]);
+				shape.image_index = real(data[3]);
+				shape.image_blend = real(data[4]);
+				shape.Width = real(data[5]);
+				shape.Height = real(data[6]);
+				shape.image_xscale = 0; // This will set itself on the next frame
+				shape.image_yscale = 0;
+			}
+			
+			FilePath = path;
+		}
+		
+		file_text_close(file);
 	}
 }
 

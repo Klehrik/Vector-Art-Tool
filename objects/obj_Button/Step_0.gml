@@ -12,11 +12,12 @@ if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, i
 		// File stuff
 		case spr_NewFile:
 			obj_Main.FilePath = "none";
-			obj_Grid.create_new_grid(22, 20);
+			//obj_Grid.create_new_grid(22, 20);
+			instance_destroy(obj_Shape);
 			break;
 				
 		case spr_LoadFile:
-			
+			obj_Main.load_from_file();
 			break;
 				
 		case spr_SaveFile:
