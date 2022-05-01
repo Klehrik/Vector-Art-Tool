@@ -1,6 +1,6 @@
 /// Grid : Init
 
-Tool = noone;
+Tool = spr_Square;
 ToolColour = c_white;
 ToolColourHSV = [0, 0, 0];
 ToolWidth = 1; // in tiles of 32

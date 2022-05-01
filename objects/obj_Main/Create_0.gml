@@ -161,6 +161,13 @@ function create_hsv_sliders()
 	slider.image_xscale = hsize / sprite_get_width(spr_HSV);
 	slider.image_yscale = vsize / sprite_get_height(spr_HSV);
 	slider.Pointer = 1;
+	
+	var button = instance_create_depth(_x, _y + (distance * 3), 0, obj_Button);
+	button.set_size(hsize);
+	button.Image = spr_Square;
+	button.Tooltip = "Colour";
+	button.TooltipWidth = 110;
+	button.TooltipHeight = 48;
 }
 
 create_file_buttons();

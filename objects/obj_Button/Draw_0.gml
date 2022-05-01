@@ -6,7 +6,7 @@ draw_self();
 var offset = 0;
 if (Pressed > 0) offset = 16 * image_xscale; // Button is selected
 var ratio = 448 / 512; // convert 512 px scale to 448 (to fit in the button frame)
-draw_sprite_ext(Image, 0, x + 2 + offset, y + 2 + offset, image_xscale * ratio, image_yscale * ratio, 0, ImageBlend, 1);
+draw_sprite_ext(Image, 0, x + (24 * image_xscale) + offset, y + (24 * image_xscale) + offset, image_xscale * ratio, image_yscale * ratio, 0, ImageBlend, 1);
 
 
 
@@ -17,3 +17,7 @@ if (Pressed > 0)
 	image_index = 1;
 }
 else image_index = 0;
+
+
+// Colour "button" (used to display current colour)
+if (Tooltip == "Colour") ImageBlend = obj_Grid.ToolColour;
