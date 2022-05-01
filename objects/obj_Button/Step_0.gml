@@ -12,7 +12,7 @@ if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, i
 		// File stuff
 		case spr_NewFile:
 			obj_Main.FilePath = "none";
-			//obj_Grid.create_new_grid(22, 20);
+			ds_list_clear(obj_Grid.DrawQueue);
 			instance_destroy(obj_Shape);
 			break;
 				
