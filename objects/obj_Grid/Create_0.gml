@@ -15,6 +15,8 @@ GridHeight = -1;
 
 ExportFile = false;
 
+ShapeDepth = 11990; // instances created on the same depth will draw under others which is not desired
+
 
 
 // Functions

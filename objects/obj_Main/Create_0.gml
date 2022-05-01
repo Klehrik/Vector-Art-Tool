@@ -244,6 +244,9 @@ function load_from_file()
 				shape.Height = real(data[6]);
 				shape.image_xscale = 0; // This will set itself on the next frame
 				shape.image_yscale = 0;
+				
+				shape.depth = obj_Grid.ShapeDepth;
+				obj_Grid.ShapeDepth -= 1;
 			}
 			
 			FilePath = path;
