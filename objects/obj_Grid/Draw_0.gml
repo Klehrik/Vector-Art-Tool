@@ -32,3 +32,18 @@ if (point_in_rectangle(mouse_x, mouse_y, 288, 80, 992, 720))
 		}
 	}
 }
+
+
+
+// Export file
+// official gms manual says to only create surfaces in the draw event
+if (ExportFile == true)
+{
+	ExportFile = false;
+	
+	var export = surface_create(704, 640);
+	draw_clear_alpha(c_white, 0);
+	with (obj_Shape) draw_self();
+	surface_copy_part(export, 0, 0, application_surface, 288, 80, 704, 640);
+	surface_save(export, get_save_filename("|*.png", "image"));
+}

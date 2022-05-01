@@ -12,6 +12,8 @@ Grid = noone;
 GridWidth = -1;
 GridHeight = -1;
 
+ExportFile = false;
+
 
 
 // Functions

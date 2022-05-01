@@ -24,6 +24,10 @@ if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, i
 			obj_Main.save_to_file();
 			break;
 			
+		case spr_ExportFile:
+			obj_Grid.ExportFile = true;
+			break;
+			
 			
 		
 		// Tool select
