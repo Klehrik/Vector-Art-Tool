@@ -46,4 +46,5 @@ if (ExportFile == true)
 	with (obj_Shape) draw_self();
 	surface_copy_part(export, 0, 0, application_surface, 288, 80, 704, 640);
 	surface_save(export, get_save_filename("|*.png", "image"));
+	surface_free(export);
 }
