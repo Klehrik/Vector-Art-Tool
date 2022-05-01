@@ -224,6 +224,7 @@ function load_from_file()
 		var check = file_text_read_string(file);
 		if (check == "vat_file")
 		{
+			ds_list_clear(obj_Grid.DrawQueue);
 			instance_destroy(obj_Shape);
 			
 			// Read metadata
