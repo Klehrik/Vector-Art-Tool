@@ -15,7 +15,7 @@ GridHeight = -1;
 
 ExportFile = false;
 
-ShapeDepth = 11990; // instances created on the same depth will draw under others which is not desired
+DrawQueue = ds_list_create(); // drawing the shapes in correct order
 
 
 

@@ -1,8 +1,5 @@
 /// Grid : Step
 
-// Reset shape depth
-if (ShapeDepth < 1) ShapeDepth = 11990;
-
 // Make tool colour
 ToolColour = make_color_hsv(ToolColourHSV[0], ToolColourHSV[1], ToolColourHSV[2]);
 
@@ -49,7 +46,15 @@ if (mouse_check_button(mb_left))
 		if (Tool == spr_Eraser)
 		{
 			var shape = instance_position(mouse_x, mouse_y, obj_Shape);
-			if (shape != noone) instance_destroy(shape);
+			if (shape != noone)
+			{
+				var pos = ds_list_find_index(DrawQueue, shape.id);
+				if (pos != -1)
+				{
+					ds_list_delete(DrawQueue, pos);
+					instance_destroy(shape);
+				}
+			}
 		}
 		else if (Tool == spr_Picker)
 		{
@@ -84,8 +89,7 @@ if (mouse_check_button(mb_left))
 				shape.image_xscale = 0; // This will set itself on the next frame
 				shape.image_yscale = 0;
 				
-				shape.depth = ShapeDepth;
-				ShapeDepth -= 1;
+				ds_list_add(DrawQueue, shape.id);
 				
 				MousePrevGridLocation = [tx, ty];
 			}

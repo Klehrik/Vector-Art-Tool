@@ -188,18 +188,23 @@ function save_to_file()
 		// Save metadata
 		file_text_write_string(file, "vat_file");
 		file_text_writeln(file);
-		file_text_write_real(file, instance_number(obj_Shape));
+		file_text_write_real(file, ds_list_size(obj_Grid.DrawQueue));
 		file_text_writeln(file);
 		
 		// Save shape data
-		with (obj_Shape)
+		for (var i = 0; i < ds_list_size(obj_Grid.DrawQueue); i++)
 		{
-			var data = "";
-			data += string(x) + " " + string(y) + " ";
-			data += string(sprite_index) + " " + string(image_index) + " " + string(image_blend) + " ";
-			data += string(Width) + " " + string(Height);
-			file_text_write_string(file, data);
-			file_text_writeln(file);
+			var shape = obj_Grid.DrawQueue[| i];
+			
+			if instance_exists(shape)
+			{
+				var data = "";
+				data += string(shape.x) + " " + string(shape.y) + " ";
+				data += string(shape.sprite_index) + " " + string(shape.image_index) + " " + string(shape.image_blend) + " ";
+				data += string(shape.Width) + " " + string(shape.Height);
+				file_text_write_string(file, data);
+				file_text_writeln(file);
+			}
 		}
 		
 		file_text_close(file);
@@ -245,8 +250,7 @@ function load_from_file()
 				shape.image_xscale = 0; // This will set itself on the next frame
 				shape.image_yscale = 0;
 				
-				shape.depth = obj_Grid.ShapeDepth;
-				obj_Grid.ShapeDepth -= 1;
+				ds_list_add(obj_Grid.DrawQueue, shape.id);
 			}
 			
 			FilePath = path;

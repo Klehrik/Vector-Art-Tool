@@ -3,6 +3,13 @@
 // Draw border
 draw_rectangle(288, 80, 992, 720, 1);
 
+// Draw shapes
+for (var i = 0; i < ds_list_size(DrawQueue); i++)
+{
+	var shape = DrawQueue[| i];
+	with (shape) draw_self();
+}
+
 // Draw grid
 draw_set_alpha(0.5);
 for (var _x = 288; _x < 992; _x += 32) draw_line(_x, 80, _x, 720);
@@ -43,7 +50,13 @@ if (ExportFile == true)
 	
 	var export = surface_create(704, 640);
 	draw_clear_alpha(c_white, 0);
-	with (obj_Shape) draw_self();
+	
+	for (var i = 0; i < ds_list_size(DrawQueue); i++)
+	{
+		var shape = DrawQueue[| i];
+		with (shape) draw_self();
+	}
+	
 	surface_copy_part(export, 0, 0, application_surface, 288, 80, 704, 640);
 	surface_save(export, get_save_filename("|*.png", "image"));
 	surface_free(export);
